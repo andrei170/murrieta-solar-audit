@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Murrieta Solar Power — Concept Site</title>
+<style>
+  :root{
+    --ink:#0e1a12; --mut:#5c6b62; --bg:#fbfcf9; --panel:#ffffff; --line:#e2e8db;
+    --sun:#e8a13a; --sun2:#c77f22; --leaf:#2f7a4f; --sky:#2b6ea5; --navy:#12252e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.55}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+
+  @keyframes drift{0%{background-position:0 0}100%{background-position:120px 120px}}
+
+  .ribbon{background:linear-gradient(90deg,#12252e,#1c3a47,#12252e);color:#eaf3fa;text-align:center;
+    padding:8px 12px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--line);
+    position:sticky;top:0;background:rgba(251,252,249,.94);backdrop-filter:blur(8px);z-index:50}
+  .brand{font-size:19px;font-weight:800}.brand span{color:var(--sun2)}
+  .navlinks{display:flex;gap:26px;align-items:center;font-size:14px;font-weight:600}
+  .navlinks a{color:var(--mut)}
+  .navlinks a.active{color:var(--ink)}
+  .navcta{background:var(--sun);color:#241605;font-weight:800;font-size:14px;padding:11px 20px;border-radius:8px}
+  @media(max-width:760px){.navlinks{display:none}}
+
+  .hero{position:relative;overflow:hidden;padding:70px 0 56px;
+    background:
+      radial-gradient(900px 460px at 88% -12%, rgba(232,161,58,.16), transparent 60%),
+      radial-gradient(700px 400px at -6% 110%, rgba(43,110,165,.14), transparent 60%),
+      var(--bg)}
+  .hero:before{content:"";position:absolute;inset:0;opacity:.5;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(43,110,165,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(43,110,165,.07) 1px, transparent 1px);
+    background-size:46px 46px; animation:drift 26s linear infinite}
+  .hero .inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+  @media(max-width:860px){.hero .inner{grid-template-columns:1fr}}
+  .kicker{color:var(--sun2);font-size:13px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+  h1{font-size:clamp(34px,5.2vw,54px);line-height:1.08;letter-spacing:-.02em;margin:16px 0 18px;max-width:14ch}
+  .hero p{font-size:17px;color:var(--mut);max-width:52ch;margin-bottom:26px}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;font-weight:800;font-size:15px;padding:14px 24px;border-radius:9px}
+  .btn.sun{background:var(--sun);color:#241605;box-shadow:0 10px 26px rgba(232,161,58,.28)}
+  .btn.ghost{border:1.5px solid var(--line);color:var(--ink)}
+  .panel{background:linear-gradient(155deg,#12252e,#1c3a47);border-radius:22px;padding:28px;color:#eaf3fa;
+    box-shadow:0 30px 60px rgba(18,37,46,.25)}
+  .panel .rays{width:52px;height:52px;border-radius:99px;background:radial-gradient(circle,var(--sun),var(--sun2));
+    margin-bottom:14px;box-shadow:0 0 40px rgba(232,161,58,.5)}
+  .panel h3{font-size:21px;margin-bottom:8px}
+  .panel p{font-size:14px;color:#c2d3da}
+  .panel .stat{display:flex;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+  .panel .stat div{text-align:left}
+  .panel .stat b{display:block;font-size:19px;color:var(--sun)}
+  .panel .stat span{font-size:12px;color:#9fb2ba}
+
+  section{padding:58px 0;border-top:1px solid var(--line)}
+  .eyebrow{color:var(--sun2);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
+  h2{font-size:clamp(25px,3.4vw,34px);margin:10px 0 14px;letter-spacing:-.01em}
+  .lede{color:var(--mut);font-size:16px;max-width:64ch}
+
+  .svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+  @media(max-width:860px){.svc{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.svc{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;
+    transition:transform .2s ease, box-shadow .2s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(18,37,46,.08)}
+  .card .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+    font-size:19px;margin-bottom:12px}
+  .card h3{font-size:16px;margin-bottom:6px}
+  .card p{font-size:13.5px;color:var(--mut)}
+  .ic.sun{background:linear-gradient(155deg,#fdeecb,#fbdca0);color:var(--sun2)}
+  .ic.leaf{background:linear-gradient(155deg,#dcf1e3,#bfe4cc);color:var(--leaf)}
+  .ic.sky{background:linear-gradient(155deg,#d8e9f4,#b9d7ea);color:var(--sky)}
+  .seeall{display:inline-block;margin-top:24px;font-weight:700;font-size:14px;color:var(--sky)}
+
+  .why{background:linear-gradient(180deg,var(--bg),#f3f6ee)}
+  .whygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  @media(max-width:800px){.whygrid{grid-template-columns:1fr}}
+  .wcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .wcard .n{width:34px;height:34px;border-radius:9px;background:var(--navy);color:var(--sun);font-weight:900;
+    display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:15px}
+  .wcard h3{font-size:15.5px;margin-bottom:6px}
+  .wcard p{font-size:13.5px;color:var(--mut)}
+
+  .final{text-align:center;background:linear-gradient(180deg,var(--bg),#eef3e8)}
+  .final .btn{margin-top:10px}
+  footer{padding:28px 0 90px;color:var(--mut);font-size:12.5px;text-align:center;border-top:1px solid var(--line)}
+  footer a{color:var(--sky);font-weight:600}
+
+  .callbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:2px solid var(--sun);
+    display:none;gap:10px;justify-content:center;padding:12px 14px;box-shadow:0 -8px 24px rgba(0,0,0,.08)}
+  .callbar a{flex:1;max-width:260px;text-align:center;font-weight:800;font-size:14.5px;padding:13px 10px;border-radius:9px}
+  .callbar .c1{background:var(--sun);color:#241605}
+  .callbar .c2{border:1.5px solid var(--sun2);color:var(--ink)}
+  @media(max-width:760px){.callbar{display:flex}body{padding-bottom:76px}}
+</style>
+</head>
+<body>
+
+<div class="ribbon">Concept site prepared for Murrieta Solar Power by AG1 Consulting — not the live site</div>
+
+<div class="wrap">
+  <nav>
+    <a href="index.html" class="brand">Murrieta <span>Solar</span> Power</a>
+    <div class="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="financing.html">Financing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="navcta" href="contact.html">Get My Estimate</a>
+  </nav>
+</div>
+
+<div class="hero">
+  <div class="wrap inner">
+    <div>
+      <div class="kicker">Murrieta &amp; Temecula Valley, CA</div>
+      <h1>Cut your power bill. Not your standards.</h1>
+      <p>Solar electric, battery backup, and solar pool heating for Southern California homes, built around a real quote before you ever pick up the phone.</p>
+      <div class="cta-row">
+        <a class="btn sun" href="contact.html">Get My Estimate</a>
+        <a class="btn ghost" href="tel:19514044207">Call (951) 404-4207</a>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="rays"></div>
+      <h3>Know your number first.</h3>
+      <p>Answer three quick questions and see an estimated system range before you talk to anyone, then get a text back in minutes.</p>
+      <div class="stat">
+        <div><b>3</b><span>quick questions</span></div>
+        <div><b>Minutes</b><span>to a text reply</span></div>
+        <div><b>0</b><span>obligation</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What we do</div>
+    <h2>Three ways to cut what you pay for power.</h2>
+    <p class="lede">Solar, storage, and heated water, built for the way Southern California actually lives outside.</p>
+    <div class="svc">
+      <div class="card"><div class="ic sun">☀</div><h3>Solar Electric</h3><p>Custom-designed systems sized to your actual usage, not a one-size estimate.</p></div>
+      <div class="card"><div class="ic sky">⚡</div><h3>Battery Backup</h3><p>Keep the lights on and the fridge cold when the grid goes down.</p></div>
+      <div class="card"><div class="ic leaf">💧</div><h3>Solar Pool Heating</h3><p>A longer swim season without a bigger gas bill.</p></div>
+      <div class="card"><div class="ic sun">🔧</div><h3>Solar Electric Repair</h3><p>Existing system underperforming? We diagnose and fix it.</p></div>
+      <div class="card"><div class="ic sky">🏊</div><h3>New Pool Construction</h3><p>Pool builds and solar heating planned together from day one.</p></div>
+      <div class="card"><div class="ic leaf">🔍</div><h3>Solar Inspection</h3><p>A clear, honest read on a system before you buy the house.</p></div>
+    </div>
+    <a class="seeall" href="services.html">See full service details →</a>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Why work with us</div>
+    <h2>A straightforward process, start to finish.</h2>
+    <div class="whygrid">
+      <div class="wcard"><div class="n">1</div><h3>Instant estimate</h3><p>Get a real range online in under a minute, no waiting for a callback.</p></div>
+      <div class="wcard"><div class="n">2</div><h3>Custom-designed system</h3><p>Sized to your actual usage and roof, not a generic package.</p></div>
+      <div class="wcard"><div class="n">3</div><h3>One team, start to finish</h3><p>Quote, install, and support handled by the same people throughout.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="final">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow">Serving Murrieta &amp; Temecula Valley</div>
+    <h2>One quote away from a lower bill.</h2>
+    <p class="lede" style="margin:0 auto">Solar electric, battery backup, and pool heating, all handled by the same team from quote to install.</p>
+    <a class="btn sun" href="contact.html">Get My Estimate</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">Murrieta Solar Power · Serving Murrieta, Temecula &amp; Southern California · <a href="tel:19514044207">(951) 404-4207</a><br>
+  Concept site by AG1 Consulting — not the live website.</div>
+</footer>
+
+<div class="callbar">
+  <a class="c1" href="tel:19514044207">Call Now</a>
+  <a class="c2" href="contact.html">Get My Estimate</a>
+</div>
+
+</body>
+</html>
