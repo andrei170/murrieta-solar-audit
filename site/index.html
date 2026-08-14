@@ -135,6 +135,31 @@
   .wcard h3{font-size:15.5px;margin-bottom:6px}
   .wcard p{font-size:13.5px;color:var(--mut)}
 
+  .areawrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:32px}
+  @media(max-width:800px){.areawrap{grid-template-columns:1fr}}
+  .areamap{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:26px;min-height:220px;
+    display:flex;flex-wrap:wrap;align-content:center;gap:10px}
+  .areapin{background:linear-gradient(155deg,#fdeecb,#fbdca0);color:var(--sun2);border-radius:10px;padding:10px 16px;
+    font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:6px}
+  .areapin:before{content:"📍"}
+  .areapin.big{background:linear-gradient(155deg,var(--navy),#1c3a47);color:var(--sun2);font-size:15px}
+
+  .finteaser{background:linear-gradient(155deg,#12252e,#1c3a47);color:#eaf3fa}
+  .fingrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  @media(max-width:800px){.fingrid{grid-template-columns:1fr}}
+  .fincard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px}
+  .fincard h3{font-size:15.5px;margin-bottom:8px;color:#fff}
+  .fincard p{font-size:13.5px;color:#c2d3da}
+  .finteaser .seeall{color:var(--sun)}
+
+  .faqwrap{margin-top:32px;display:flex;flex-direction:column;gap:10px}
+  details.faqitem{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  details.faqitem summary{font-weight:700;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  details.faqitem summary::-webkit-details-marker{display:none}
+  details.faqitem summary:after{content:"+";font-size:20px;color:var(--sun2);font-weight:400}
+  details.faqitem[open] summary:after{content:"−"}
+  details.faqitem p{margin-top:12px;font-size:14px;color:var(--mut)}
+
   .final{text-align:center;background:linear-gradient(155deg,var(--navy),#1c3a47);color:#fff;position:relative;overflow:hidden}
   .final:before{content:"";position:absolute;width:600px;height:600px;border-radius:99px;top:-300px;left:50%;
     transform:translateX(-50%);background:radial-gradient(circle,rgba(232,161,58,.16),transparent 70%)}
@@ -252,6 +277,54 @@
       <div class="wcard reveal d1"><div class="n">1</div><h3>Instant estimate</h3><p>Get a real range online in under a minute, no waiting for a callback.</p></div>
       <div class="wcard reveal d2"><div class="n">2</div><h3>Custom-designed system</h3><p>Sized to your actual usage and roof, not a generic package.</p></div>
       <div class="wcard reveal d3"><div class="n">3</div><h3>One team, start to finish</h3><p>Quote, install, and support handled by the same people throughout.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">Service area</div>
+    <h2 class="reveal">Serving Southwest Riverside County.</h2>
+    <p class="lede reveal">If you're in one of these areas, an estimate is a message away.</p>
+    <div class="areawrap">
+      <div class="areamap reveal d1">
+        <div class="areapin big">Murrieta</div>
+        <div class="areapin big">Temecula</div>
+        <div class="areapin">Wildomar</div>
+        <div class="areapin">Menifee</div>
+        <div class="areapin">Winchester</div>
+        <div class="areapin">Lake Elsinore</div>
+      </div>
+      <div class="reveal d2">
+        <p style="color:var(--mut);font-size:15px">Southwest Riverside County sees some of the highest summer cooling loads in Southern California — which also makes it some of the best solar payback territory. If your address isn't listed, ask anyway; service area details change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finteaser">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--sun)">Financing</div>
+    <h2 class="reveal" style="color:#fff">A few ways to pay for a system that pays you back.</h2>
+    <p class="lede reveal" style="color:#c2d3da">Every household is different — no single answer fits everyone.</p>
+    <div class="fingrid">
+      <div class="fincard reveal d1"><h3>Cash Purchase</h3><p>Own the system outright, no monthly payment, fastest path to full return.</p></div>
+      <div class="fincard reveal d2"><h3>Solar Loan</h3><p>Spread the cost over time while still owning the system.</p></div>
+      <div class="fincard reveal d3"><h3>Lease / PPA</h3><p>Lower upfront cost, pay for the power produced instead.</p></div>
+    </div>
+    <a class="seeall reveal" href="financing.html">See financing details →</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow reveal">Common questions</div>
+    <h2 class="reveal">Before you ask, a few answers.</h2>
+    <div class="faqwrap">
+      <details class="faqitem reveal d1"><summary>How long does installation take?</summary><p>Timelines vary by system size and permitting in your city — this gets confirmed once your specific site assessment is done, not guessed upfront.</p></details>
+      <details class="faqitem reveal d2"><summary>Do I need to replace my roof first?</summary><p>Not always. It depends on your roof's age and condition, which is part of what the on-site assessment covers before any install is scheduled.</p></details>
+      <details class="faqitem reveal d3"><summary>What happens if my system needs a repair later?</summary><p>Solar Electric Repair is one of our standing services — existing systems, including ones we didn't originally install, can be diagnosed and fixed.</p></details>
+      <details class="faqitem reveal d4"><summary>Is the online estimate accurate?</summary><p>It's a real range based on what you tell us, not a placeholder number — the final quote gets refined once we've seen your roof and usage.</p></details>
     </div>
   </div>
 </section>
