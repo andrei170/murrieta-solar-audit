@@ -109,8 +109,16 @@
   .callbar .c2{border:1.5px solid var(--sun2);color:var(--ink)}
   @media(max-width:760px){.callbar{display:flex}body{padding-bottom:76px}}
 </style>
-</head>
+<style>
+.agnav{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line,#222b36)}
+.agnav .inner{max-width:1080px;margin:0 auto;padding:0 22px;display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.agnav .inner::-webkit-scrollbar{height:0}
+.agnav a{flex:0 0 auto;padding:13px 13px;font-size:13.5px;font-weight:600;color:var(--mut,#8b949e);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap}
+.agnav a:hover{color:var(--ink,#e6edf3)}
+.agnav a.on{color:var(--accent,#2f81f7);border-bottom-color:var(--accent,#2f81f7)}
+</style></head>
 <body>
+<nav class="agnav"><div class="inner"><a href="assets.html">All Assets</a><a href="./">Audit</a><a href="launch.html">Launch &amp; Roadmap</a><a href="website-concept.html" class="on">Website Concept</a><a href="demo.html">Concept Site</a></div></nav>
 
 <div class="ribbon">Website concept prepared for Murrieta Solar Power by AG1 Consulting - not the live site</div>
 
